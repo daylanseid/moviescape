@@ -1,4 +1,4 @@
-const db = require('../connection');
+const db = require('../config/connection');
 
 module.exports = {
   findAll() {
@@ -29,6 +29,16 @@ module.exports = {
         VALUES ($/title/, $/starring/, $/year/, $/description/, $/img/)
         RETURNING *
         `, movie);
+  },
+
+  saveMovie(movie) {
+    movie.date_created;
+    console.log('movie', movie)
+    return db.one(`
+      INSERT INTO (moviestitle, starring, year, description, img) 
+      VALUES ($/title/, $/starring/, $/year/, $/description/, $/img/)
+      RETURNING *
+      `, movie);
   },
 
   update(movie) {

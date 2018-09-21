@@ -1,10 +1,10 @@
-DROP DATABASE IF EXISTS moviesscape_db;
-CREATE DATABASE moviesscape_db;
+-- DROP DATABASE IF EXISTS moviesscape_db;
+-- CREATE DATABASE moviesscape_db;
 
-\c moviesscape_db;
+-- \c moviescape_db;
 
-DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS movies CASCADE;
+DROP TABLE IF EXISTS locations CASCADE;
 
 
 CREATE TABLE locations (
