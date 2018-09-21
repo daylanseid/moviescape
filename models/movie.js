@@ -2,7 +2,7 @@ const db = require('../config/connection');
 
 module.exports = {
   findAll() {
-    return db.many(`
+    return db.query(`
       SELECT *
       FROM movies
     `);

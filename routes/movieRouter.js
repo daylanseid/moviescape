@@ -8,11 +8,12 @@ const viewController = require('../controllers/viewController');
 const movieRouter = express.Router();
 
 
-const handle404 = (err, req, res, next) => {
-  // console.error(err);
-  res.sendStatus(404);
-};
+// const handle404 = (err, req, res, next) => {
+//   // console.error(err);
+//   res.sendStatus(404);
+// };
 
+movieRouter.get('/', movieController.index, viewController.showAll, viewController.show404);
 // Edit
 movieRouter.get('/:id/edit', movieController.getOne, viewController.showEditForm);
 
@@ -31,8 +32,8 @@ movieRouter.put('/:id', movieController.update, viewController.handleUpdate);
 movieRouter.post('/', movieController.create, viewController.handleCreate);
 
 // Get all
-movieRouter.get('/', movieController.index, viewController.showAll, viewController.show404);
 
-movieRouter.use(handle404);
+
+// movieRouter.use(handle404);
 
 module.exports = movieRouter;

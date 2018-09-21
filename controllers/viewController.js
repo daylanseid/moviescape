@@ -3,7 +3,7 @@ module.exports = {
 
   // Show all
   showAll(req, res) {
-    res.render('movie/showAll');
+    res.render('index');
   },
 
   // Show one
